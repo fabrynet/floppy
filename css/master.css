@@ -1,0 +1,132 @@
+@font-face {
+  font-family: Montserrat;
+  src: url(../font/Montserrat-Regular.ttf);
+}
+
+/* reset dei margini */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Montserrat, sans-serif;
+  background-color: #fea571;
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+.floppy {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 480px;
+  height: 500px;
+  background-color: #222;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px rgba(0,0,0, 0.7);
+  transition: all 0.35s;
+  padding-bottom: 20px;
+}
+.floppy:hover {
+  transform: scale(1.07);
+  cursor: pointer;
+  box-shadow: 4px 4px 12px rgba(0,0,0, 0.8);
+}
+.magnet,
+.label {
+  width: 70%;
+}
+.magnet {
+  position: relative;
+  height: 150px;
+  background-color: #111;
+  border-radius: 0 0 10px 10px;
+}
+.slider {
+  position: absolute;
+  right: 0;
+  top:0;
+  width: 80%;
+  height: 100%;
+  color: #666;
+  background-color: #e1e1e1;
+  border-radius: 0 0 10px 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.magnet:active .slider {
+  animation: slide 0.5s;
+}
+.window {
+  width: 50px;
+  height: 100px;
+  background-color: #111;
+}
+.slider .text {
+  height: 100px;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.slider .text p {
+  font-size: 11px;
+  font-weight: bold;
+  font-style: italic;
+  text-transform: uppercase;
+}
+.label {
+  height: 280px;
+  padding: 20px;
+  background-color: #e1e1e1;
+  border-radius: 10px;
+  position: relative;
+}
+.label h2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.label p {
+  min-height: 30px;
+  line-height: 30px;
+  border-bottom: 1px solid lightgrey;
+  vertical-align: text-top;
+}
+.label img {
+  width: 100px;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+@keyframes slide {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: 20%;
+  }
+}
+@media all and (max-width:490px) {
+  .floppy {
+    width: 90%;
+    height: auto;
+    padding: 10px;
+  }
+  .magnet {
+    display: none;
+  }
+  .label {
+    width: 100%;
+    height: auto;
+  }
+  .label img {
+    display: none;
+  }
+}
